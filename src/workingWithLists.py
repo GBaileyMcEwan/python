@@ -11,10 +11,13 @@ snippet = args.snippet.lower()
 with open('/usr/share/dict/words') as f:
   words = f.readlines()
 
+# Did you know you can replace all of the below with a single line (shown hash out below)
 matches = []
 
 for word in words:
    if snippet in word.lower():
        matches.append(word)
+
+#matches = [word.strip() for word in words if snippet in word.lower()]
 
 print(matches)
