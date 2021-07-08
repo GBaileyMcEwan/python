@@ -18,7 +18,17 @@ test_function(5, 5)
 
 # note that input functions are ALWAYS treated as strings!  If you do a calculation on them you will need to convert to a int/float
 testUserInput = input("Enter something here: ")
-print(f"TestUserInput was: {testUserInput}")
+if testUserInput.isdigit():
+    print(f"TestUserInput was: {testUserInput}")
+    test_function(5, int(testUserInput))
+else:
+    print(f"TestUserInput was: {testUserInput}")
+    print("Your input was not a number! Don't ruin my program!")
+    #test_function(5, int(testUserInput))
 
 return_variable = test_function(5, 5)
 print(f"My return variable was: {return_variable}")
+
+myTestVar = "0"
+while int(myTestVar) != 99:
+    myTestVar = input("Enter Something Here: ")
